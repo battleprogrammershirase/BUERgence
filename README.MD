@@ -8,10 +8,10 @@ It's only focused on output (tg) t/s since I don't really care about pp t/s but 
 Right now it has two modes: random-smart and random.
 
 ### -random-smart
-Generates random -ngl and -t values for the whole search space then dismisses 1/N entries. (N is the value of the -dismiss paramater) Evaluates everything then once that's done search around the best candidate to hopefully find 
+Generates random -ngl and -t values for the whole search space then dismisses 1/N entries. (N is the value of the -dismiss parameter). Evaluates everything then once that's done search around the best candidate to hopefully find 
 
 ### -random (not recommended)
-Uses (non-repeating) random values and outputs the best options found until it is terminated or the whole search space has been tested.
+Uses (non-repeating) random values and output the best options found until it is terminated or the whole search space has been tested.
 
 
 ## TODOs / IDEAS / QUESTIONS
