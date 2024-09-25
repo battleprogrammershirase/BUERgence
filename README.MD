@@ -1,4 +1,7 @@
 # BUERgence
+
+![BUER](logo.png)
+
 BUERgence aims to find the best llama.cpp inference settings to maximize tokens/s.
 
 It's only focused on output (tg) t/s since I don't really care about pp t/s but PRs welcome. 
