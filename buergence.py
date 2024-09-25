@@ -9,7 +9,7 @@ from multiprocessing import cpu_count
 
 # TODO: implement smart random search
 
-def random_search(args: dict) -> str:
+def random_search(args):
     llama_bench_path = Path.cwd().joinpath(Path(args.dir+'/llama-bench' + '.exe' if os.name == 'nt' else ''))
     model_path = Path.cwd().joinpath(Path(args.model))
     search_space = [(x,y) for x in range(args.ngl_min, args.ngl_max+1) for y in range(args.min_threads, args.max_threads+1)]
@@ -30,6 +30,7 @@ def random_search(args: dict) -> str:
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(prog="BUERgence",description="Find the best values for layer offloading and thread count for llama.cpp")
+    parser.add_argument('-s', '--strategy', help='Strategy to use to search the parameter space. (Default: random-smart)', default="random-smart", choices=['random', 'random-smart'])
     parser.add_argument('-m', '--model', help='Path of the model to test', required=True)
     parser.add_argument('-d', '--dir', help='Path of the llama.cpp binaries. (Default: .)', default='.')
     parser.add_argument('-mit', '--min-threads', help='Minimum number of CPU threads to test. (Default: 1)', default=1, type=int)
@@ -39,6 +40,7 @@ if __name__ == '__main__':
     parser.add_argument('-mang', '--ngl-max', help='Maximum number of layers to offload to the GPU. (Default: 999)', default=999, type=int)
     parser.add_argument('-r', '--repeat', help='How many time to repeat each test. (Default 5, see llama-bench --help)', default=5, type=int)
     parser.add_argument('-n', '--n-gen', help='Number of tokens to gen. (Default 128, see llama-bench --help)', default=128, type=int)
+    parser.add_argument('-sr', '--smart_range', help='Range to search around best params found when using smart-random. (Default: 5)', default=5, type=int)
 
     args = parser.parse_args()
 

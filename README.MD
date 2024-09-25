@@ -32,3 +32,4 @@ Uses (non-repeating) random values and output the best options found until it is
 - make a cool TUI with graphs and stuff
 - allow tests models with different quants
 - use llama-cli directly instead of llama-bench?
+- much cleaner code
