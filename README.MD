@@ -23,7 +23,7 @@ Uses (non-repeating) random values and output the best options found until it is
     - Do a first pass between -ngl-min, -ngl-max, -threads-min, -threads-max with a big step size. When this is done, find the highest t/s and search around it with finer steps, eventually settling for the best result.
 - Optimize for other things for ex:
     - best perf with lowest RAM/VRAM usage
-    - best perf with lowest CPU/GPU usage
+    - best perf with lowest CPU/GPU usage (right now can be emulated with low -mat/-mang values)
     - best perf with lowest I/O load
     - etc
 - make a cool TUI with graphs and stuff
